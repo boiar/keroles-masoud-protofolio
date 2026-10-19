@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light/dark mode"></button>
+
+  <header class="hero">
+    <h1 id="name"></h1>
+    <p class="role" id="role"></p>
+    <p class="location" id="location"></p>
+    <p class="bio" id="bio"></p>
+    <nav class="links" id="links"></nav>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline" id="experience"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Projects</h2>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Skills</h2>
+      <div class="skills" id="skills"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Education &amp; Languages</h2>
+      <ul class="plain" id="education"></ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Get in touch</h2>
+      <p class="contact-intro">Open to backend roles and interesting projects. The best way to reach me is email or phone.</p>
+      <div class="contact-list" id="contact-list"></div>
+    </section>
+  </main>
+
+  <footer>&copy; <span id="year"></span> <span id="footerName"></span></footer>
+
+  <script src="projects.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
